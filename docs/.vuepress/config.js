@@ -82,7 +82,7 @@ head: [
     }
   },
   themeConfig: {
-    logo: "/seed_of_bitcoin.png",
+    logo: "/seed_of_bitcoin-small.png",
     searchPlaceholder: 'Search the archive...',
     smoothScroll: true,
     displayAllHeaders: false,
