@@ -127,10 +127,10 @@ head: [
             "/bitcoin/ResourcesBitcoin.md"
 	  ]
         }
-      ]
+      ],
       "/economics/": [
         {
-          title: "Bitcoin",
+          title: "Economics",
           collapsable: false,
           sidebarDepth: 2,
           children: [
@@ -148,7 +148,26 @@ head: [
             "/economics/Socialism.md",
             "/economics/Communism.md",
             "/economics/ResourcesEconomics.md"    
-          ]
-	}
+         ]
+        }
+      ],
+      "/natural-law/": [
+        {
+          title: "Natural Law",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+           "/natural-law/InitiationNaturalLaw.md",
+           "/economics/Anarchy.md",
+           "/economics/Agorism.md",
+           "/natural-law/Hermeticism.md",
+           "/natural-law/Gnosism.md",
+           "/natural-law/Rosicrucianism.md",
+           "/natural-law/Aghori.md"
+        ]
+        }
+      ]
+    }
   }
 }
+
