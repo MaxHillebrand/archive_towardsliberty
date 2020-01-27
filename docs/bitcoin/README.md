@@ -20,6 +20,6 @@ Bitcoin is open source sound money that emerges out of the free and peaceful mar
 - [Lightning Network](/bitcoin/LightningNetwork.md)
 - [Cryptography](/bitcoin/Cryptography.md)
 - [Cryptoanarchy](/bitcoin/Cryptoanarchy.md)
-- [Further Resoruces](/bitcoin/Resources.md)
+- [Further Resoruces](/bitcoin/ResourcesBitcoin.md)
 
 ---

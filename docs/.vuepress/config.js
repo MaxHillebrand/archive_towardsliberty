@@ -124,11 +124,31 @@ head: [
             "/bitcoin/LightningNetwork.md",
             "/bitcoin/Cryptography.md",
             "/bitcoin/Cryptoanarchy.md",
-            "/bitcoin/Resources.md"
-
+            "/bitcoin/ResourcesBitcoin.md"
 	  ]
         }
       ]
-    }
+      "/economics/": [
+        {
+          title: "Bitcoin",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: [
+            "/economics/InitiationEconomics.md",
+            "/economics/Praxeology.md",
+            "/economics/Scarcity.md",
+            "/economics/MonetaryTheory.md",
+            "/economics/Competition.md",
+            "/economics/Calculation.md",
+            "/economics/Anarchy.md",
+            "/economics/Agorism.md",
+            "/economics/Ethics.md",
+            "/economics/Fascism.md",
+            "/economics/Democracy.md",
+            "/economics/Socialism.md",
+            "/economics/Communism.md",
+            "/economics/ResourcesEconomics.md"    
+          ]
+	}
   }
 }
