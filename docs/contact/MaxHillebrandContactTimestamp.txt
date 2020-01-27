@@ -1,0 +1,4 @@
+�OpenTimestamps��Proof�����蒔@���<�*�J�>�/���M>5��n��vj�����	cj�idX��������A�O���v�Q��� ^U��L�beB`���,7bG�V�����WmHz��\�׵��80d$�M����
+.��.-https://alice.btc.calendar.opentimestamps.org����V����1g����q�� ��鷶*Y��/�і&C�i� �˝�]qHZ�%��\�׶�.ӆE�����
+.��,+https://bob.btc.calendar.opentimestamps.org�)�(������F`����m����X&:��ū�� ɰ�I���1�'�֙�ikb��Xz����,�٤�\�׶���Ѯmn����
+.��)(https://finney.calendar.eternitywall.com
