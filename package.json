@@ -1,7 +1,7 @@
 {
-  "name": "Journal",
+  "name": "Towards Liberty",
   "version": "0.1.0",
-  "description": "The contemplations privately journaled by Max Hillebrand.",
+  "description": "An archive of knowledge about Bitcoin, Economics and Natural Law, curated by Max Hillebrand.",
   "scripts": {
     "prestart": "rm -rf docs/.vuepress/dist",
     "start": "vuepress dev docs",

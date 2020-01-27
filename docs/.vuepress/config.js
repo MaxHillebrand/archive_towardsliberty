@@ -87,6 +87,7 @@ head: [
     smoothScroll: true,
     displayAllHeaders: false,
     sidebarDepth: 0,
+    repo: "MaxHillebrand/towardsliberty",
     docsDir: "docs",
     editLinks: true,
     lastUpdated: 'Last Updated',
