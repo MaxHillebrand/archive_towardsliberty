@@ -109,14 +109,24 @@ head: [
       }
     ],
     sidebar: {
-      "Bitcoin": [
+      "/bitcoin/": [
         {
           title: "Bitcoin",
           collapsable: false,
           sidebarDepth: 2,
           children: [
+            "/bitcoin/InitiationBitcoin.md",
+            "/bitcoin/FullNode.md",
+            "/bitcoin/Wallets.md",
+            "/bitcoin/Transaction.md",
+            "/bitcoin/StackingSats.md",
+            "/bitcoin/Privacy.md",
+            "/bitcoin/LightningNetwork.md",
+            "/bitcoin/Cryptography.md",
+            "/bitcoin/Cryptoanarchy.md",
+            "/bitcoin/Resources.md"
 
-          ]
+	  ]
         }
       ]
     }
