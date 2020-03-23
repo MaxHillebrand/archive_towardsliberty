@@ -7,6 +7,9 @@
 
 # Initiation to Bitcoin
 
+[[toc]]
+
+## Start Here
 
 - [Bitcoin white paper](https://nakamotoinstitute.org/bitcoin), by Satoshi Nakamoto
 - [Bitcoin white paper with annotations](https://fermatslibrary.com/s/bitcoin)
@@ -28,3 +31,11 @@
 - [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook#mastering-bitcoin), by Andreas Antonopolous
 - [Programming the blockchain in C#](https://github.com/ProgrammingBlockchain/ProgrammingBlockchain#click-here-to-read-the-book), by Nicolas Dorier and Adam Ficsor
 - [21 lessons: What I've learned from falling down the Bitcoin rabbit hole](https://www.amazon.com/dp/1697526349), by Gigi
+
+
+## History of Bitcoin
+
+- [The writings of Satoshi Nakamoto](https://satoshi.nakamotoinstitute.org/)
+- [Writings preceding Satoshi & Bitcoin](https://nakamotoinstitute.org/literature/)
+- [The rise of the cypherpunks](https://www.coindesk.com/the-rise-of-the-cypherpunks), by Jameson Lopp
+
