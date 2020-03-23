@@ -20,3 +20,11 @@
 - [Bitcoin only](https://bitcoin-only.com/)
 - [A Human Rights Activist’s Response to Bitcoin Critics](https://medium.com/@alexgladstein/a-human-rights-activists-response-to-bitcoin-critics-d50e6760ee80), by Alex Gladstein
 
+
+## Must Read Books
+
+- [The internet of money [three volumes]](https://theinternetofmoney.info/), by Andreas Antonopolous
+- [The Bitcoin standard](https://thesaifhouse.wordpress.com/book/), by Saifedean Ammous
+- [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook#mastering-bitcoin), by Andreas Antonopolous
+- [Programming the blockchain in C#](https://github.com/ProgrammingBlockchain/ProgrammingBlockchain#click-here-to-read-the-book), by Nicolas Dorier and Adam Ficsor
+- [21 lessons: What I've learned from falling down the Bitcoin rabbit hole](https://www.amazon.com/dp/1697526349), by Gigi
