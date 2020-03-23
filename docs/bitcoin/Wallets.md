@@ -32,3 +32,15 @@
 - [Subzero](https://medium.com/square-corner-blog/open-sourcing-subzero-ee9e3e071827), by Alok Menghrajani
 - [The Business of Cold Storage](https://medium.com/@timevalueofbtc/the-business-of-bitcoin-cold-storage-148fba7f1255), by Nik Bathia
 
+## Private Key Backup
+
+Don't back up your keys on hardware connected to the internet, and especially not the cloud.
+Use old school pen and paper, with long-lasting inc, best to laminate for water resistance as well.
+You should consider physical safety and fire protection with a decent safe.
+
+- Back up fire resistant with [Blockstream Metal](https://store.blockstream.com/product/blockstream-metal/), [Cryptosteel](https://cryptosteel.com/), or do it yourself with a [metal letter stamp](https://duckduckgo.com/?q=metal%2Bletter%2Bstamps&t=canonical&atb=v1-1&ia=web)
+- Maybe in the future after more research and testing, use Shamir's Secret Sharing to securely split up your seed into m-of-n parts. This is #reckless... [Satoshi Lab's implementation](https://github.com/satoshilabs/slips/blob/master/slip-0039.md#decryption-of-the-master-secret), [Ian Coleman's implementation](https://iancoleman.io/shamir39/), [Ron Raiter's implementation](https://github.com/ronreiter/multicrypt)
+- Encrypt your backup seed with [BIP 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed) "25th word"
+- Do visual encryption with the [Revealer](https://revealer.cc/) or by [steganography](https://incoherency.co.uk/stegoseed/)
+- [Smart Custody](https://github.com/BlockchainCommons/SmartCustodyWhitePapers)
+
