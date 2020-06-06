@@ -96,7 +96,7 @@ Create app VMs by executing in dom0: `qvm-create <name of app VM> --template <na
 Qubes is made to compartimentalize your computer, and it has it's greatest potential, when this concept is applied to the extreme.
 Each software should have it's own dedicated VM.
 Even further, some website should have dedicated VMs too!
-This is not just a security improvement, but also a productivity hack.
+This is not just a security improvement, but also [an incredible productivity hack](https://github.com/Kixunil/security_writings/blob/master/solving_security_and_procrastination.md).
 When for example GitHub and Twitter can only be accessed in two independent VMs, then the incentive to waste time on Twitter is drastically reduced.
 
 ## Disposable VMs
