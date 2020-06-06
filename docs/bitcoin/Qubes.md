@@ -141,7 +141,14 @@ Qubes comes with a very well configured custom build of the [i3 window manager](
 The installation is trivial, by simply executing in dom0: `sudo qvm-dom0-update i3 i3-settings-qubes`.
 Next time when logging in with username and password, click on the `XF` circle in the top right corner, and select `i3 wm`. 
 The experience is almost identical to the regular i3wm setup, however, each VM will have it's own color scheme around the borders of the i3 window.
-The d-menu navigation [powerkey + d] has a list of the favorite applications, starting with the name of the VM, following with the software itself, but because of the use of dom0 alias', this is not often used.
+The d-menu navigation [mod + d] has a list of the favorite applications, starting with the name of the VM, following with the software itself, but because of the use of dom0 alias', this is not often used.
+
+One increadible useful combination of i3 + Qubes is the function of the scratchpad.
+This is a window that is usally hidden, any application can be put into this window, and on demand, it is revelaed on whatever workscreen the current view is.
+This is especially useful when a dom0 terminal is in the scratchpad, from which the alias' can be called.
+In the `~/.config/i3/config` file, add two lines `bindsym $mod+SHIFT+o move scratchpad` to move any window into the scratchpad, and `bindsym $mod+o scrachpad show`. 
+On an empty workspace, open a dom0 terminal [mod + ENTER], then hit move it to the scratchpad [mod + SHIFT + o].
+Now, on whatever workscreen you are, reveal the scratchpad [mod + o], execute a dom0 command, and hide the scratchpad again [mod + o]. 
  
 ## Conclusion
 
