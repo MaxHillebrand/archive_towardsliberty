@@ -22,3 +22,10 @@ However, instead of needing to buy new hardware for each task, the separation is
 
 Checkout the very thorough [Qubes documentation](https://qubes-os.org/docs) for in depth analysis and guides on the whole OS.
 
+## Installation
+
+Unfortunately, Qubes does not run on every hardware, so check the [hardware compatibility list](https://qubes-os.org/hcl) to see if another contributor has verified that the OS works on your specific computer.
+The gist of it is, **more RAM = more better**.
+8GB RAM is the bare minimum, 16GB RAM is comfortable, 32GB RAM is reasonable, but why not 128GB RAM?!
+[Installing Qubes](https://qubes-os.org/doc/installation-guide) should be pretty straight forward, make sure to verify the PGP signature of the iso file and to set a secure password for the luks disk encryption and user.
+
