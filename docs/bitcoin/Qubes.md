@@ -40,6 +40,7 @@ These sys VMs should be run at launch and should be kept running all the time.
 This is the operating system that is installed "bare metal" on the hardware itself.
 It has full admin rights to the whole computer, and thus it is critical to keep this VM clean and secure.
 From this fedora based VM, other VMs can be created, booted and destroyed.
+VMs can be booted with `qvm-start <name of VM>` and shutdown with `qvm-shutdown <name of VM>`.
 
 ### sys-net
 
@@ -49,7 +50,7 @@ Only sys-firewall should connect to sys-net, no other VM should connect to it.
 ### sys-firewall
 
 Is an additional layer of defense to separate VMs one step from sys-net directly.
-AppVMs will connect to sys-firewall, which will forward the traffic to sys-net, so that the AppVm can access the internet.
+App VMs will connect to sys-firewall, which will forward the traffic to sys-net, so that the app VM can access the internet.
 
 ### sys-whonix
 
@@ -61,9 +62,9 @@ You can set a VM to connect to sys-whnoix with the command in dom0: `qvm-prefs -
 
 Is a VM dedicated to manage the usb ports.
 This means, if you connect a usb device, at first it is only connected to sys-usb.
-Next, you have to manually specify the AppVM that the usb device should connect to.
-Sys-usb thus ensures that the usb device does not get access to just any AppVM, only the one you specify.
-List all attached usb devices by executing in dom0: `qvm-usb list`, and attack them to an AppVM by executing in dom0: `qvm-usb attack <AppVM> sys-usb:<DEVID>'.
+Next, you have to manually specify the app VM that the usb device should connect to.
+Sys-usb thus ensures that the usb device does not get access to just any app VM, only the one you specify.
+List all attached usb devices by executing in dom0: `qvm-usb list`, and attack them to an app VM by executing in dom0: `qvm-usb attack <app VM> sys-usb:<DEVID>'.
 
 ## Template VMs
 
@@ -79,11 +80,28 @@ Now open the terminal in the new template VM by executing in dom0: `qvm-run <nam
 Next install what ever software you want to.
 However, do not run the software itself in this template VM, this should only be done in AppVMs.
 
-## AppVMs
+## App VMs
 
-The software you engage with should mostly be booted in AppVMs.
-These are VMs which are based on template VMs, so any software that is installed in the template VM, can be run in the AppVM.
-You should not install new software in AppVMs, in fact, any software that is installed in AppVMs will be deleted on shutdown.
-For example, if you want to have a dedicated AppVM to access a browser, or any other standard software, then you can use the regular Debian, or Fedora, or Whonix template VMs.
-But, if you want an AppVM to run custom software, then base it on a template VM where you have installed this.
-You can create AppVMs by executing in dom0: `qvm-create <name of AppVM> --template <name of template VM> --label <color>`.
+The software you engage with should mostly be booted in app VMs.
+These are VMs which are based on template VMs, so any software that is installed in the template VM, can be run in the app VM.
+You should not install new software in app VMs, in fact, any software that is installed in app VMs will be deleted on shutdown.
+For example, if you want to have a dedicated app VM to access a browser, or any other standard software, then you can use the regular Debian, or Fedora, or Whonix template VMs.
+But, if you want an app VM to run custom software, then base it on a template VM where you have installed this.
+You can create app VMs by executing in dom0: `qvm-create <name of app VM> --template <name of template VM> --label <color>`.
+
+Qubes is made to compartimentalize your computer, and it has it's greatest potential, when this concept is applied to the extreme.
+Every software should have it's dedicated VM.
+Even further, some website should have dedicated VMs too!
+This is not just a security improvement, but also a productivity hack.
+When for example GitHub and Twitter can only be accessed in two independent VMs, then the incentive to waste time on Twitter is drastically reduced.
+
+## Disposable VMs
+
+Disposable VMs are a special type of VM which clone an already existing VM [either app or template], boot it to run software, and upon shutdown, delete the entire VM.
+This is especially useful for security and privacy focused tasks, where unnecessary metadata should be avoided.
+For example, booting a disposable Whonix VM to access the Tor browser, and after use, deleting all possible metadata and logs.
+Any VM can be made a template for disp VMs by executing in dom0: `qvm-prefs --set <name of VM> template_for_dispvms True`.
+Now any software that is installed in this VM can be booted in a disposable environment by executing in dom0: `qvm-run --dispvm=<name of disp VM> <software to execute>`.
+
+There are some important things to consider when using Whonix in disposable VMs, so please carefully [read the docs on how to](https://whonix.org/wiki/Qubes/DisposableVM).
+
