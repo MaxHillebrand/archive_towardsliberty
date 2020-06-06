@@ -135,6 +135,14 @@ qvm-usb attach pass "$device"
 qvm-run pass gnome-terminal
 ```
 
+## i3 window manager
+
+Qubes comes with a very well configured custom build of the [i3 window manager](https://i3wm.org), and it is a match made in heaven.
+The installation is trivial, by simply executing in dom0: `sudo qvm-dom0-update i3 i3-settings-qubes`.
+Next time when logging in with username and password, click on the `XF` circle in the top right corner, and select `i3 wm`. 
+The experience is almost identical to the regular i3wm setup, however, each VM will have it's own color scheme around the borders of the i3 window.
+The d-menu navigation [powerkey + d] has a list of the favorite applications, starting with the name of the VM, following with the software itself, but because of the use of dom0 alias', this is not often used.
+ 
 ## Conclusion
 
 Running Qubes is like buying a new computer for every task, and throwing it away after it is done.
