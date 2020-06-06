@@ -112,6 +112,7 @@ A great productivity hack is to maintain an exhaustive collection of alias' in d
 These can be added at the end of the `~/.bashrc` file in dom0.
 For example, launching a dedicated software in a dedicated VM becomes as easy as executing in dom0 `sgnl`, which is the alias for `alias sgnl='qvm-run signal signal-desktop'`.
 Or, booting a disposable Whonix VM and running the Tor browser and fetching a dedicated .onion website is as easy as `explr`, due to `alias explr='qvm-run --dispvm=whonix-ws-dvm "torbrowser http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion"'.
+To shutdown a VM is as simple as `kgh`, due to `alias kgh='qvm-shutdown github'`.
 
 Another nice trick is to use more ellaborate bash scripts to handle more complex tasks.
 These can be added in dom0 to `~/usr/local/bin/`, and made executable with `chmod +x`.
@@ -133,3 +134,10 @@ qvm-usb attach pass "$device"
 
 qvm-run pass gnome-terminal
 ```
+
+## Conclusion
+
+Running Qubes is like buying a new computer for every task, and throwing it away after it is done.
+Like any advanced cyberspace tool, it has a learning curve, but it is absolutely doable for anyone with the motivation to defend his security and privacy.
+Once the fundamental concept of radical compartmentalization is understood, when template, app and disp VMs are setup properly, and when alias' are included, then it becomes very user friendly too.
+At this point, one understands that Qubes is actually, the only reasonably secure operating system out there.
