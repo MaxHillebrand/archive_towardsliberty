@@ -75,12 +75,12 @@ Template VMs are where new software is installed, and on which AppVMs are based.
 By default, there are templates for Debian, Fedora and Whonix installed.
 Make sure that these are always up to date by utilizing the Qubes update manager.
 However, do not install random software in these base templated, because any software you will install here, will be used by all AppVMs that are based on it.
-Rather, only install software that you will need in any case, like for exmaple vim in the whonix-ws template.
+Rather, only install software that you will need in any case, like for exmaple vim in the whonix-ws template, but be very careful with what you install in whonix-ws!
 
 If you want to install a new software, that you do not want to use on every AppVM, then it is best to create a new template VM.
 First, clone the initial template VM in dom0 with `qvm-clone <name of old template VM> <name of new template VM>`.
 Now open the terminal in the new template VM by executing in dom0: `qvm-run <name of new template VM> gnome-terminal`.
-Next install what ever software you want to.
+Next, install what ever software you want to.
 However, do not run the software itself in this template VM, this should only be done in app VMs.
 
 ## App VMs
@@ -88,10 +88,11 @@ However, do not run the software itself in this template VM, this should only be
 The software you engage with should mostly be booted in app VMs.
 These are VMs which are based on template VMs, so any software that is installed in the template VM, can be run in the app VM.
 You should not install new software in app VMs, in fact, any software that is installed in app VMs will be deleted on shutdown.
+However, this can be useful if you want to test software without committing to installing it long term.
 For example, if you want to have a dedicated app VM to access a browser, or any other standard software, then you can use the regular Debian, or Fedora, or Whonix template VMs.
 But, if you want an app VM to run custom software, then base it on a template VM where you have installed this.
 You can create multiple app VMs on the same template, and store different data on them, which is useful to separate for example your mainnet and testnet Bitcoin wallet.
-Create app VMs by executing in dom0: `qvm-create <name of app VM> --template <name of template VM> --label <color>`.just
+Create app VMs by executing in dom0: `qvm-create <name of app VM> --template <name of template VM> --label <color>`.
 
 Qubes is made to compartimentalize your computer, and it has it's greatest potential, when this concept is applied to the extreme.
 Each software should have it's own dedicated VM.
@@ -105,7 +106,7 @@ Disposable VMs are a special type of VM which clone an already existing app VM, 
 This is especially useful for security and privacy focused tasks, where unnecessary metadata should be avoided.
 For example, booting a disposable Whonix VM to access the Tor browser, and after use deleting all possible metadata and logs.
 Any VM can be made a template for disp VMs by executing in dom0: `qvm-prefs --set <name of VM> template_for_dispvms True`.
-Now any software that is installed in this VM can be booted in a disposable environment by executing in dom0: `qvm-run --dispvm=<name of disp VM> <software to execute>`.
+Now any software that is installed in this VM can be booted in a disposable environment by executing in dom0: `qvm-run --dispvm=<name of disp VM template> <software to execute>`.
 After the software is shut down, the dispvm is destroyed.
 
 There are some important things to consider when using Whonix in disposable VMs, so please carefully [read the docs on how to set it up properly](https://whonix.org/wiki/Qubes/DisposableVM).
@@ -142,16 +143,16 @@ qvm-run pass gnome-terminal
 
 ## i3 window manager
 
-Qubes comes with a very well configured custom build of the [i3 window manager](https://i3wm.org), and it is a match made in heaven.
+Qubes comes with a very well configured custom build of the [i3 window manager](https://i3wm.org), and it is a match made for the gods.
 The installation is trivial, by simply executing in dom0: `sudo qvm-dom0-update i3 i3-settings-qubes`.
 Next time when logging in with username and password, click on the `XF` circle in the top right corner, and select `i3 wm`. 
 The experience is almost identical to the regular i3wm setup, however, each VM will have it's own color scheme around the borders of the i3 window.
 The d-menu navigation [mod + d] has a list of the favorite applications, starting with the name of the VM, following with the software itself, but because of the use of dom0 alias', this is not often used.
 
 One increadible useful combination of i3 + Qubes is the function of the scratchpad.
-This is a window that is usally hidden, any application can be put into this window, and on demand, it is revelaed on whatever workscreen the current view is.
+This is a window that is usally hidden, though any application can be put into this window, and on demand, it is revelaed on whatever workscreen the current view is.
 This is especially useful when a dom0 terminal is in the scratchpad, from which the alias' can be called.
-In the `~/.config/i3/config` file, add two lines `bindsym $mod+SHIFT+o move scratchpad` to move any window into the scratchpad, and `bindsym $mod+o scrachpad show`. 
+In the `~/.config/i3/config` file, add two lines `bindsym $mod+SHIFT+o move scratchpad` to move any window into the scratchpad, and `bindsym $mod+o scratchpad show` to show the window.just
 On an empty workspace, open a dom0 terminal [mod + ENTER], then move it to the scratchpad [mod + SHIFT + o].
 Now, on whatever workscreen you are, reveal the scratchpad [mod + o], execute a dom0 command, and hide the scratchpad again [mod + o]. 
  
