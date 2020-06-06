@@ -64,3 +64,17 @@ This means, if you connect a usb device, at first it is only connected to sys-us
 Next, you have to manually specify the AppVM that the usb device should connect to.
 Sys-usb thus ensures that the usb device does not get access to just any AppVM, only the one you specify.
 List all attached usb devices by executing in dom0: `qvm-usb list`, and attack them to an AppVM by executing in dom0: `qvm-usb attack <AppVM> sys-usb:<DEVID>'.
+
+## On template VMs
+
+Template VMs are where new software is installed, and on which AppVMs are based.
+By default, there are templates for Debian, Fedora and Whonix installed.
+Make sure that these are always up to date by utilizing the Qubes update manager.
+However, do not install random software in these base templated, because any software you will install here, will be used by all AppVMs that are based on it.
+Rather, only install software that you will need in any case, like for exmaple vim in the whonix-ws template.
+
+If you want to install a new software, that you do not want to use on every AppVM, then it is best to create a new template VM.
+First, clone the initial template VM in dom0 with `qvm-clone <name of old template VM> <name of new template VM>`.
+Now open the terminal in the new template VM by executing in dom0: `qvm-run <name o fnew template VM> gnome-terminal`.
+Next install what ever software you want to.
+However, do not run the software itself in this template VM, this should only be done in AppVMs. 
