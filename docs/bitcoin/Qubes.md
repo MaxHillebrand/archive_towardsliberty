@@ -29,7 +29,7 @@ The gist of it is, **more RAM = more better**.
 8GB RAM is the bare minimum, 16GB RAM is comfortable, 32GB RAM is reasonable, but why not 128GB RAM?!
 [Installing Qubes](https://qubes-os.org/doc/installation-guide) should be pretty straight forward, make sure to verify the PGP signature of the iso file and to set a secure password for the luks disk encryption and user.
 
-## On sys VMs
+## Sys VMs
 
 After a proper installation, Qubes will have generated multiple virtual machines that will manage different important tasks of the operating system inherently compartmentalized.
 The defaults are pretty good, and these should not be messed with too much by an inexperienced user.
@@ -65,7 +65,7 @@ Next, you have to manually specify the AppVM that the usb device should connect 
 Sys-usb thus ensures that the usb device does not get access to just any AppVM, only the one you specify.
 List all attached usb devices by executing in dom0: `qvm-usb list`, and attack them to an AppVM by executing in dom0: `qvm-usb attack <AppVM> sys-usb:<DEVID>'.
 
-## On template VMs
+## Template VMs
 
 Template VMs are where new software is installed, and on which AppVMs are based.
 By default, there are templates for Debian, Fedora and Whonix installed.
@@ -75,6 +75,15 @@ Rather, only install software that you will need in any case, like for exmaple v
 
 If you want to install a new software, that you do not want to use on every AppVM, then it is best to create a new template VM.
 First, clone the initial template VM in dom0 with `qvm-clone <name of old template VM> <name of new template VM>`.
-Now open the terminal in the new template VM by executing in dom0: `qvm-run <name o fnew template VM> gnome-terminal`.
+Now open the terminal in the new template VM by executing in dom0: `qvm-run <name of new template VM> gnome-terminal`.
 Next install what ever software you want to.
-However, do not run the software itself in this template VM, this should only be done in AppVMs. 
+However, do not run the software itself in this template VM, this should only be done in AppVMs.
+
+## AppVMs
+
+The software you engage with should mostly be booted in AppVMs.
+These are VMs which are based on template VMs, so any software that is installed in the template VM, can be run in the AppVM.
+You should not install new software in AppVMs, in fact, any software that is installed in AppVMs will be deleted on shutdown.
+For example, if you want to have a dedicated AppVM to access a browser, or any other standard software, then you can use the regular Debian, or Fedora, or Whonix template VMs.
+But, if you want an AppVM to run custom software, then base it on a template VM where you have installed this.
+You can create AppVMs by executing in dom0: `qvm-create <name of AppVM> --template <name of template VM> --label <color>`.
