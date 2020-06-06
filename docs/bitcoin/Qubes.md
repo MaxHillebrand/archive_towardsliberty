@@ -105,3 +105,31 @@ Now any software that is installed in this VM can be booted in a disposable envi
 
 There are some important things to consider when using Whonix in disposable VMs, so please carefully [read the docs on how to](https://whonix.org/wiki/Qubes/DisposableVM).
 
+## Alias' in dom0
+
+As you can see by the command examples above, running a software in a VM can become a bit tedious.
+A great productivity hack is to maintain an exhaustive collection of alias' in dom0.
+These can be added at the end of the `~/.bashrc` file in dom0.
+For example, launching a dedicated software in a dedicated VM becomes as easy as executing in dom0 `sgnl`, which is the alias for `alias sgnl='qvm-run signal signal-desktop'`.
+Or, booting a disposable Whonix VM and running the Tor browser and fetching a dedicated .onion website is as easy as `explr`, due to `alias explr='qvm-run --dispvm=whonix-ws-dvm "torbrowser http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion"'.
+
+Another nice trick is to use more ellaborate bash scripts to handle more complex tasks.
+These can be added in dom0 to `~/usr/local/bin/`, and made executable with `chmod +x`.
+For example, with this script queries sys-usb for a YubiKey 2FA stick and connects it to the password manager VM, and running the terminal once it is complete.
+
+```
+#!/bin/bash
+
+qvm-start -q sys-usb & qvm-start -q pass
+
+RUNNING=$(qvm-ls | grep pass | grep Running | wc -l)
+while [ $RUNNING -eq 0 ]; do sleep 1; RUNNING=$(qvm-ls | grep pass | grep Running | wc -l); done
+
+device="`qvm-usb list | grep Yubico | awk '{ print $1 }'`"
+
+sleep 2
+
+qvm-usb attach pass "$device"
+
+qvm-run pass gnome-terminal
+```
