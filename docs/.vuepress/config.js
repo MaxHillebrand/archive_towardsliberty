@@ -125,6 +125,7 @@ head: [
             "/bitcoin/LightningNetwork.md",
             "/bitcoin/Cryptography.md",
             "/bitcoin/Cryptoanarchy.md",
+            "/bitcoin/Qubes.md",
             "/bitcoin/ResourcesBitcoin.md"
 	  ]
         }
