@@ -82,6 +82,12 @@ First, clone the initial template VM in dom0 with `qvm-clone <name of old templa
 Now open the terminal in the new template VM by executing in dom0: `qvm-run <name of new template VM> gnome-terminal`.
 Next, install what ever software you want to.
 However, do not run the software itself in this template VM, this should only be done in app VMs.
+  
+### Minimal Template VMs
+  
+Default templates contain numerous applications pre-installed for convenience, however, this has both security as well as resource requirement constraints. There are unncessecary packages in the template, which could potentially be executed if the AppVM gets compromised. Of course more software pre-installed means more storage, CPU and RAM usage, this is especially noticable when using many VMs.
+There are [template VMs of the minimal OS packages](https://www.qubes-os.org/doc/templates/minimal/), where only the essential programs are pre-installed. This reduces potential security vulnerabilities and resource requirements. There are minimal templates available for Fedora, Debian, CentOS and Gentoo [not for Whonix].
+They can be installed by executing in dom0 `sudo qubes-dom0-update qubes-template-<DISTRO_NAME>-<RELEASE_NUMBER>-minimal`. Some newer versions may not be available in the "official" repository, so add the flag `--enablerepo=qubes-templates-itl-testing` or `--enablerepo=qubes-templates-community`. Now install only the software which you want to run.
 
 ## App VMs
 
